@@ -1,12 +1,14 @@
 
 
-class TwitterAPI():
+class TwitterAPI:
 
-	consumerKey = None
-	consumerSecret = None
+	def __init__(self, consumer_key=None, consumer_secret=None):
+		"""Python 3
+		TwitterAPI Constructor
 
-	def __init__(self, consumerKey=None, consumerSecret=None):
+		:param consumer_key: str
+		:param consumer_secret: str
+		"""
 
-		self._consumerKey = consumerKey
-		self._consumerSecret = consumerSecret
-
+		self._consumerKey = consumer_key
+		self._consumerSecret = consumer_secret
