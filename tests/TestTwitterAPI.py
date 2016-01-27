@@ -7,6 +7,9 @@ class TestTwitterAPI(unittest.TestCase):
     _API = None
 
     def setUp(self):
+        """ Python 3
+        Set up test before it runs
+        """
 
         self._API = TwitterAPI()
 
