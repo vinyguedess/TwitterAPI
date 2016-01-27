@@ -6,8 +6,8 @@ setup = {
         'VERSION': '0.6.1',
 
         'AUTHORIZATION': {
-            'CONSUMER_KEY': 'wmanKvXVpvBtanMbIllPqg',
-            'CONSUMER_SECRET': 'OLb7k1rCEsfzGesoZHj75rZbRnrxmgiNDwmjzaW9Y'
+            'CONSUMER_KEY': '',
+            'CONSUMER_SECRET': ''
         }
     }
 }
