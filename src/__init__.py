@@ -6,7 +6,7 @@ from .setup import setup
 
 class TwitterAPI:
 
-    _appName = 'TwitterAPI'
+    _appName = None
     _consumerKey = None
     _consumerSecret = None
     _accessToken = None
@@ -21,9 +21,9 @@ class TwitterAPI:
         :param consumer_secret: str
         """
 
-        self._appName = setup['APP_NAME']
-        self._consumerKey = setup['CONSUMER_KEY']
-        self._consumerSecret = setup['CONSUMER_SECRET']
+        self._appName = setup['APP']['NAME']
+        self._consumerKey = setup['APP']['AUTHORIZATION']['CONSUMER_KEY']
+        self._consumerSecret = setup['APP']['AUTHORIZATION']['CONSUMER_SECRET']
 
     def is_authenticated(self):
         """ Python 3

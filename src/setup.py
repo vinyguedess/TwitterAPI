@@ -1,10 +1,13 @@
 
 
 setup = {
-    # App information
-    'APP_NAME': 'TwitterAPI for Python',
+    'APP': {
+        'NAME': 'TwitterAPI for Python',
+        'VERSION': '0.6.1',
 
-    # Authentication information
-    'CONSUMER_KEY': '',
-    'CONSUMER_SECRET': ''
+        'AUTHORIZATION': {
+            'CONSUMER_KEY': '',
+            'CONSUMER_SECRET': ''
+        }
+    }
 }
