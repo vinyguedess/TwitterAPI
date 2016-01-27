@@ -119,6 +119,14 @@ class TwitterAPI:
         }).request()
 
     def get_user_followers(self, user_name, count=100, skip_status=False):
+        """Python 3
+        Get a list of followers from defined user that match the filter requirements
+
+        :param user_name: str
+        :param count: int
+        :param skip_status: bool
+        :return: TwitterAPIResponse
+        """
 
         if self.is_authenticated() is False:
             self.authenticate_application()
