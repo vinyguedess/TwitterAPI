@@ -8,16 +8,20 @@ class TestTwitterAPI(unittest.TestCase):
 
     def setUp(self):
 
-        consumer_key = 'wmanKvXVpvBtanMbIllPqg'
-        consumer_secret = 'OLb7k1rCEsfzGesoZHj75rZbRnrxmgiNDwmjzaW9Y'
-        self._API = TwitterAPI(consumer_key, consumer_secret, app_name='TwitterAPI')
+        self._API = TwitterAPI()
 
     def test_authentication(self):
         """ Python 3
         Testing TwitterAPI Authentication
         """
 
+        # Test if is authenticated before authenticate to receive FALSE
+        self.assertFalse(self._API.is_authenticated())
+
         # Test if authentication works
+        self.assertTrue(self._API.authenticate_application())
+
+        # Test if authenticated expecting a TRUE response now because authentication was made above
         self.assertTrue(self._API.authenticate_application())
 
     def test_user_requests(self):

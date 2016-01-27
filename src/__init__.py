@@ -1,6 +1,7 @@
 from base64 import b64encode
 from .TwitterAPIRequest import TwitterAPIRequest
 from .TwitterAPIResponse import TwitterAPIResponse
+from .setup import setup
 
 
 class TwitterAPI:
@@ -12,7 +13,7 @@ class TwitterAPI:
 
     _allowedResultTypes = ['mixed', 'recent', 'popular']
 
-    def __init__(self, consumer_key, consumer_secret, app_name='TwitterAPI'):
+    def __init__(self):
         """Python 3
         TwitterAPI Constructor
 
@@ -20,9 +21,9 @@ class TwitterAPI:
         :param consumer_secret: str
         """
 
-        self._appName = app_name
-        self._consumerKey = consumer_key
-        self._consumerSecret = consumer_secret
+        self._appName = setup['APP_NAME']
+        self._consumerKey = setup['CONSUMER_KEY']
+        self._consumerSecret = setup['CONSUMER_SECRET']
 
     def is_authenticated(self):
         """ Python 3
