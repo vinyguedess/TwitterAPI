@@ -3,6 +3,10 @@ from src import TwitterAPI, TwitterAPIResponse
 
 
 class TestTwitterAPI(unittest.TestCase):
+    """ Python 3
+
+    Class responsible for implementing tests on whole API
+    """
 
     _API = None
 
