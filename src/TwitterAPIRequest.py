@@ -1,4 +1,5 @@
-import urllib.request, urllib.parse, gzip
+import urllib.request
+import urllib.parse
 from .TwitterAPIResponse import TwitterAPIResponse
 
 
@@ -11,7 +12,7 @@ class TwitterAPIRequest:
     _method = 'GET'
     _header = {}
 
-    def __init__(self, url, data={}, method='GET', header={}):
+    def __init__(self, url, data=None, method='GET', header=None):
         """Python
 
         :param url:

@@ -1,11 +1,12 @@
-import gzip, json
+import gzip
+import json
 
 
 class TwitterAPIResponse:
 
     _response = ''
-    _GZipEncoded=True
-    _header=None
+    _GZipEncoded = True
+    _header = None
 
     def __init__(self, response, gzip_encoded=True):
         """ Python 3
@@ -35,6 +36,7 @@ class TwitterAPIResponse:
         """ Python 3
         Get response headers
 
+        :param header: str
         :return: dict
         """
 

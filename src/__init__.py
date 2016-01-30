@@ -1,7 +1,6 @@
 from base64 import b64encode
 from .TwitterAPIRequest import TwitterAPIRequest
 from .TwitterAPIResponse import TwitterAPIResponse
-from .setup import setup
 
 
 class TwitterAPI:
@@ -13,17 +12,15 @@ class TwitterAPI:
 
     _allowedResultTypes = ['mixed', 'recent', 'popular']
 
-    def __init__(self):
+    def __init__(self, consumer_key, consumer_secret, app_name = 'TwitterAPI'):
         """Python 3
         TwitterAPI Constructor
-
-        :param consumer_key: str
-        :param consumer_secret: str
         """
 
-        self._appName = setup['APP']['NAME']
-        self._consumerKey = setup['APP']['AUTHORIZATION']['CONSUMER_KEY']
-        self._consumerSecret = setup['APP']['AUTHORIZATION']['CONSUMER_SECRET']
+        # Get app information from setup
+        self._appName = app_name
+        self._consumerKey = consumer_key
+        self._consumerSecret = consumer_secret
 
     def is_authenticated(self):
         """ Python 3
@@ -131,7 +128,8 @@ class TwitterAPI:
         if self.is_authenticated() is False:
             self.authenticate_application()
 
-        url = '/1.1/followers/list.json?cursor=-1&screen_name=%s&count=%d&skip_status=%s' % (user_name, count, skip_status)
+        url = '/1.1/followers/list.json?cursor=-1&screen_name=%s' % user_name
+        url += '&count=%d&skip_status=%s' % (count, skip_status)
 
         return TwitterAPIRequest(url, header={
             'Host': 'api.twitter.com',

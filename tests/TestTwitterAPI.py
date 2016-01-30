@@ -11,7 +11,9 @@ class TestTwitterAPI(unittest.TestCase):
         Set up test before it runs
         """
 
-        self._API = TwitterAPI()
+        consumer_key = 'CONSUMER_KEY'
+        consumer_secret = 'CONSUMER_SECRET'
+        self._API = TwitterAPI(consumer_key, consumer_secret, app_name='MyTwitterAPI')
 
     def test_authentication(self):
         """ Python 3
